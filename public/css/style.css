@@ -43,3 +43,15 @@
    #home-header h2 {
      top: 40%;
    }
+
+   /*******************************************PROJETS********************************/
+
+   main div div #projets {
+     background-color: grey;
+   }
+
+   main div h2 {
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: lighter;
+   }

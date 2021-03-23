@@ -47,4 +47,20 @@ class ProjetsRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * @return Projets[] Return en array of Projets objects by lasted inserted id
+     */
+
+    public function findLastSix()
+    {
+        return $this->createQueryBuilder('fls') // 'fls' est un alias
+            // ->andWhere('fls.id > :val')
+            // ->setParameter('val', 0)
+            ->orderBy('fls.id', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

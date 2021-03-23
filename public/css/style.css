@@ -46,12 +46,34 @@
 
    /*******************************************PROJETS********************************/
 
-   main div div #projets {
-     background-color: grey;
+
+   #projets {
+     background-color: #333;
    }
 
-   main div h2 {
+   #projets div h2 {
      color: #fff;
      text-transform: uppercase;
      font-weight: lighter;
+   }
+
+
+
+   /*********************************************COMPETENCES*************************/
+
+   #competences {
+     background-color: #777;
+
+   }
+
+   #competences div div h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: lighter;
+   }
+
+   #competences div div div h3 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: lighter;
    }

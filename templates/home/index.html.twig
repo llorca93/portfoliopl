@@ -8,13 +8,13 @@
         <h1>PIERRE LLORCA</h1>
         <h2>Développeur web et web mobile</h2>
     </header>
-    <main class="container-fluid p-5 bg-secondary">
-        <div class="row">
+    <section id="projets" class="container-fluid p-5">
+        <div class="row section">
             <div class="col-12 p-5">
             <h2 class="text-center">Mes projets</h2>
             </div>
         </div>
-        <div class="row bg-secondary">
+        <div class="row section">
             {% for projet in projets %}
                 {% if loop.index <= 6 %}
                     <div class="col-4 p-3">
@@ -32,11 +32,31 @@
                 {% endif %}
             {% endfor %}
         </div>
+    </section>
+    <section id="competences" class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <section id="competences"></section>
+            <div class="col-12 p-3">
+                <h2 class="text-center">Compétences</h2>
             </div>
         </div>
+        <div class="row">
+            <div class="col-4 p-3">
+                <div id="technos" class="text-center p-4">
+                    <h3>Technologies</h3>
+                </div>
+            </div>
+            <div class="col-4 p-3">
+                <div id="frameworks" class="text-center p-4">
+                    <h3>Frameworks/Librairies</h3>
+                </div>
+            </div>
+            <div class="col-4 p-3">
+                <div id="cms" class="text-center p-4">
+                    <h3>CMS</h3>
+                </div>
+            </div>
+        </div>
+    </section>
         <div class="row">
             <div class="col-12">
                 <section id="apropos"></section>

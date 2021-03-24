@@ -16,7 +16,7 @@ class HomeController extends AbstractController
     public function index(ProjetsRepository $projetsRepository, CompetencesRepository $competencesRepository): Response
     {
         $projets = $projetsRepository->findLastSix();
-        $competences = $competencesRepository->findAll();
+        $competences = $competencesRepository->findByCategory();
         
         return $this->render('home/index.html.twig', [
             'projets' => $projets,

@@ -72,8 +72,21 @@
     font-weight: lighter;
    }
 
-   #competences div div div h3 {
+   .divider {
+     height: 1px;
+     background-color: #fff;
+   }
+
+   #competences div div h3 {
     color: #fff;
     text-transform: uppercase;
     font-weight: lighter;
+   }
+
+   #competences div div p {
+     color: #fff;
+   }
+
+   #competences div div p img {
+     width: 100px;
    }

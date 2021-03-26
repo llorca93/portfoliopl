@@ -88,5 +88,26 @@
    }
 
    #competences div div p img {
-     width: 100px;
+     width: 80px;
    }
+
+   /***********************************************APROPOS*************************************************/
+
+   #about {
+    background-color: #333;
+  }
+
+  #about h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-style: italic;
+  }
+
+  #about div div p {
+    color: #fff;
+    font-weight: lighter;
+    font-style: italic;
+  }
+
+  

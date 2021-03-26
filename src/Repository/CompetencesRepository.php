@@ -48,12 +48,12 @@ class CompetencesRepository extends ServiceEntityRepository
     }
     */
 
-    public function findByCategory()
+    public function findByCategory($cat)
     {
-        return $this->createQueryBuilder('fls') // 'fls' est un alias
-            // ->andWhere('fls.id > :val')
-            // ->setParameter('val', 0)
-            ->orderBy('fls.categorie', 'DESC')
+        return $this->createQueryBuilder('fbc') // 'fls' est un alias
+            ->andWhere('fbc.categorie = :val')
+            ->setParameter('val', $cat)
+            ->orderBy('fbc.categorie', 'DESC')
             ->setMaxResults(5)
             ->getQuery()
             ->getResult()

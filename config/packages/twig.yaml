@@ -1,2 +1,9 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        copyright: 'Copyright  © 2021 - Pierre llorca'
+        contact_address: '14 rue Gambetta'
+        contact_zip: 77400
+        contact_city: 'Thorigny sur Marne'
+        contact_phone: '07.83.11.75.98'
+        contact_email: 'p.llorca.pl@gmail.com'

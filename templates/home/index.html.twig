@@ -16,8 +16,8 @@
         </div>
         <div class="row section">
             {% for projet in projets %}
-                {% if loop.index <= 2 %}
-                    <div class="col-6 p-3">
+                {% if loop.index <= 3 %}
+                    <div class="col-4 p-3">
                         <div class="card">
                             <img class="card-img-top" src="{{ asset('img/projet/' ~ projet.image) }}" alt="Card image cap">
                             <div class="card-body">
@@ -44,35 +44,86 @@
                 <h2 class="text-center p-5">Compétences</h2>
             </div>
             <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-0 col-lg-4 p-5">
+                <div id="technos" class="text-center p-4">
                     <h3 class="pb-3">Technologies</h3>
+                </div>
                     <div class="divider"></div>
-                    {% for competence in competences %}
-                    {% if loop.index <= 5 %}
-                    <p><img class="p-4" src="{{ asset('img/competences/' ~ competence.image) }}" alt="Card image cap"> - {{ competence.titre }}</p>
-                    {% endif %}
+                    {% for techno in technologies %}
+                    <p><img class="p-4" src="{{ asset('img/competences/' ~ techno.image) }}" alt="image technos"> - {{ techno.titre }}</p>
                     {% endfor %} 
             </div>
             <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-0 col-lg-4 p-5">
                 <div id="frameworks" class="text-center p-4">
-                    <h3>Frameworks/Librairies</h3>
+                    <h3 class="pb-3">Frameworks/Librairies</h3>
                 </div>
                 <div class="divider"></div>
+                {% for framework in frameworks %}
+                    {% if loop.index <= 10 %}
+                    <p><img class="p-4" src="{{ asset('img/competences/' ~ framework.image) }}" alt="image frameworks"> - {{ framework.titre }}</p>
+                    {% endif %}
+                {% endfor %} 
             </div>
             <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-0 col-lg-4 p-5">
                 <div id="cms" class="text-center p-4">
-                    <h3>CMS</h3>
+                    <h3 class="pb-3">CMS</h3>
                 </div>
                 <div class="divider"></div>
+                {% for cm in cms %} 
+                    {% if loop.index <= 10 %} 
+                    <p><img class="p-4" src="{{ asset('img/competences/' ~ cm.image) }}" alt="image cms"> - {{ cm.titre }}</p>
+                    {% endif %} 
+                {% endfor %} 
             </div>
-            
         </div>
     </section>
-        <div class="row">
-            <div class="col-12">
-                <section id="apropos"></section>
+    <div id="about" class="container-fluid">
+
+        <h2 class="p-5">A propos</h2>
+
+        <div class="row p-5">
+            <div class="col-md-8 offset-md-2 text-justify">
+                {% for apropo in apropos %} 
+                <p>{{ apropo.apropos}}</p>
+                {% endfor %} 
+            </div>
+            <div class="col-12 text-center p-3">
+                <a class="btn btn-outline-light" href="{{ asset('doc/CVPierreLLORCA_DEVELOPPEURWEB.pdf') }}" target="blank" role="button">Voir mon CV</a>
+            </div>
+        </div>
+
+    </div>
+
             </div>
         </div>
         
-    </main>
+        <footer class="container-fluid bg-light">
+            <div class="row text-center p-5">
+                <div class="col-4">
+                    <h5>QUELQUES LIENS</h5>
+                    <div class="dropdown-divider"></div>
+                    <p><a href="{{ path('home') }}">Accueil</a></p>
+                    <p><a href="#projets">Projets</a></p>
+                    <p><a href="#competences">Compétences</a></p>
+                    <p><a href="#about">A propos</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+                <div class="col-4 my-auto">
+                    <img src="{{ asset('img/logo.png') }}" alt="logo SUBL'IMMO" class="w-80">
+                </div>
+                <div class="col-4">
+                    <h5>COORDONNEES</h5>
+                    <div class="dropdown-divider"></div>
+                    <p>{{ contact_address }}</p>
+                    <p>{{ contact_zip }} {{ contact_city }}</p>
+                    <p>{{ contact_phone }}</p>
+                    <p>{{ contact_email}}</p>
+                </div>
+            </div>
+            <div class="row" id="copyright">
+                <div class="col-12 text-center">
+                    <p>{{ copyright }}</p>
+                </div>
+            </div>
+        </footer>
 
 {% endblock %}

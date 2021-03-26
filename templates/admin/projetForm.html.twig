@@ -1,0 +1,18 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block title %}Projet - formulaire {% endblock %} 
+
+{% block body %} 
+
+    <h1>Formulaire - Projet</h1>
+
+    <div class="py-5">
+    {{ form_start(projetForm) }}
+    {{ form_end(projetForm) }}
+    </div>
+
+    <div class="text-center pb-5">
+      <a href="{{ path('admin_projets') }}" class="btn btn-danger">Annuler</a>
+    </div>
+
+{% endblock %}

@@ -7,3 +7,4 @@ twig:
         contact_city: 'Thorigny sur Marne'
         contact_phone: '07.83.11.75.98'
         contact_email: 'p.llorca.pl@gmail.com'
+    form_themes: ['bootstrap_4_horizontal_layout.html.twig']

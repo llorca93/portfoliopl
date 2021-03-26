@@ -18,24 +18,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for projet in projets|reverse %}
+                    {% for projet in projets %}
                         <tr>
-                            <td class="align-middle">{{ loop.revindex }}</td>
+                            <td class="align-middle">{{ loop.index }}</td>
                             <td class="align-middle">{{ projet.titre }}</td>
                             <td class="align-middle">{{ projet.description|u.truncate(50, '...') }}</td>
-                            <td class="align-middle"><img src="{{ asset('img/projets/') ~ projet.image }}" alt="photo principale projet"></td>
+                            <td class="align-middle"><img src="{{ asset('img/projet/') ~ projet.image }}" alt="photo principale projet"></td>
                             
                             
                             <td class="align-middle">
-                                <a href="{{ path('admin_maison_update', {'id':projet.id}) }}"><i class="fas fa-pen-square"></i></a>
-                                <a href="{{ path('admin_maison_delete', {'id':projet.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                                <a href="{{ path('admin_projets_update', {'id':projet.id}) }}"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ path('admin_projets_delete', {'id':projet.id}) }}"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
             <div class="text-right my-5">
-                <a href="{{ path('admin_maison_create') }}" class="btn btn-outline-dark">Ajouter une maison</a>
+                <a href="{{ path('admin_projets_create') }}" class="btn btn-outline-dark">Ajouter un projet</a>
             </div>
         </div>
 

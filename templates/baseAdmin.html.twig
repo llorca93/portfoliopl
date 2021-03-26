@@ -9,7 +9,7 @@
         <meta name="description" content="site d'annonces immobilières">
 
         
-        <title>SUBL'IMMO - admin - {% block title %}Welcome!{% endblock %}</title>
+        <title>PIERRE LLORCA - admin - {% block title %}BIENVENUE{% endblock %}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
         ">
@@ -30,7 +30,7 @@
             <nav class="col-1 bg-secondary">
                 <ul>
                   <a href="{{ path('admin') }}" title="accueil administrateur"><li><i class="fas fa-laptop"></i></li></a>
-                  <a href="{{ path('admin') }}" title="projets"><li><i class="fas fa-home"></i></li></a>
+                  <a href="{{ path('admin_projets') }}" title="projets"><li><i class="fas fa-home"></i></li></a>
                   {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <a href="{{ path('admin') }}" title="utilisateurs"><li><i class="fas fa-users"></i></li></a>
                   {% endif %}

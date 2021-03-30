@@ -18,13 +18,13 @@
         
 
         <nav class="navbar sticky-top navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}" alt="logo Pierre Llorca"></a>
+            <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('img/logo.png') }}" alt="logo Pierre Llorca"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#projets">Projets</a>
+                    <a class="nav-item nav-link" href="{{ path('home') }}">Projets</a>
                     <a class="nav-item nav-link" href="#competences">Compétences</a>
                     <a class="nav-item nav-link" href="#about">A propos</a>
                     <a class="nav-item nav-link" href="#contact">Contact</a>
@@ -67,6 +67,12 @@
         "></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js
         "></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+        <script>
+            $(document).ready(function(){
+                bsCustomFileInput.init()
+            })
+        </script>
         
         {% block javascripts %}{% endblock %}
     </body>

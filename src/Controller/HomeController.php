@@ -17,7 +17,7 @@ class HomeController extends AbstractController
     public function index(ProjetsRepository $projetsRepository, CompetencesRepository $competencesRepository, AproposRepository $aProposRepository): Response
     {
         $projets = $projetsRepository->findAll();
-       // $competences = $competencesRepository->findByCategory();
+        // $competences = $competencesRepository->findByCategory();
         $technos = $competencesRepository->findByCategory('technologies');
         $frameworks = $competencesRepository->findByCategory('frameworks');
         $cms = $competencesRepository->findByCategory('cms');

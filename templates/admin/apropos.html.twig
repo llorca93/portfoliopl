@@ -1,0 +1,37 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+
+        <div>
+            <h1 class="pb-5">A PROPOS</h1>
+
+            <table class="table table-bordered table-dark text-center table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Texte A propos</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for apropo in apropos %}
+                        <tr>
+                            <td class="align-middle">{{ loop.index }}</td>
+                            <td class="align-middle">{{ apropo.apropos }}</td>
+                            <td class="align-middle">
+                                <a href="{{ path('admin_apropos_update', {'id':apropo.id}) }}"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ path('admin_apropos_delete', {'id':apropo.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="text-right my-5">
+                <a href="{{ path('admin_apropos_create') }}" class="btn btn-outline-dark">Ajouter un texte</a>
+            </div>
+        </div>
+
+{% endblock %}
+

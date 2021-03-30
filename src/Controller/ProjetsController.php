@@ -71,7 +71,7 @@ class ProjetsController extends AbstractController
             $nomOldImg = $projet->getImage();
             if ($infoImg !== null) {
                 
-                $cheminImg = $this->getParameter('dossier_photos_maisons') . '/' . $nomOldImg;
+                $cheminImg = $this->getParameter('dossier_photos_projets') . '/' . $nomOldImg;
                 
                 if (file_exists($cheminImg)) {
                     unlink($cheminImg);
@@ -79,7 +79,7 @@ class ProjetsController extends AbstractController
 
                 $extensionImg = $infoImg->guessExtension(); // recupere l'extension de l'image
                 $nomImg = time() . '-1.' . $extensionImg; // cree un nom unique pour l'image
-                $infoImg->move($this->getParameter('dossier_photos_maisons'), $nomImg); // deplacer l'image dans le dossier adequat
+                $infoImg->move($this->getParameter('dossier_photos_projets'), $nomImg); // deplacer l'image dans le dossier adequat
                 $projet->setImage($nomImg); // definit le nom de l'image a mettre en bdd
 
 

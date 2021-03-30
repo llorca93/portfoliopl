@@ -1,0 +1,18 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block title %}Compétences - formulaire {% endblock %} 
+
+{% block body %} 
+
+    <h1>Formulaire - Compétences</h1>
+
+    <div class="py-5">
+    {{ form_start(competencesForm) }}
+    {{ form_end(competencesForm) }}
+    </div>
+
+    <div class="text-center pb-5">
+      <a href="{{ path('admin_competences') }}" class="btn btn-danger">Annuler</a>
+    </div>
+
+{% endblock %}

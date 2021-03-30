@@ -1,0 +1,43 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Compétences{% endblock %}
+
+{% block body %}
+
+        <div>
+            <h1 class="pb-5">Liste des compétences</h1>
+
+            <table class="table table-bordered table-dark text-center table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Titre</th>
+                        <th>Catégorie</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for competence in competences %}
+                        <tr>
+                            <td class="align-middle">{{ loop.index }}</td>
+                            <td class="align-middle">{{ competence.titre }}</td>
+                            <td class="align-middle">{{ competence.categorie }}</td>
+                            <td class="align-middle"><img src="{{ asset('img/competences/') ~ competence.image }}" alt="image compétence"></td>
+                            
+                            
+                            <td class="align-middle">
+                                <a href="{{ path('admin_competences_update', {'id':competence.id}) }}"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ path('admin_competences_delete', {'id':competence.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="text-right my-5">
+                <a href="{{ path('admin_competences_create') }}" class="btn btn-outline-dark">Ajouter une compétence</a>
+            </div>
+        </div>
+
+{% endblock %}
+

@@ -32,10 +32,12 @@
                   <a href="{{ path('admin') }}" title="accueil administrateur"><li><i class="fas fa-laptop"></i></li></a>
                   <a href="{{ path('admin_projets') }}" title="projets"><li><i class="fas fa-home"></i></li></a>
                   {% if is_granted('ROLE_SUPER_ADMIN') %}
-                    <a href="{{ path('admin') }}" title="utilisateurs"><li><i class="fas fa-users"></i></li></a>
+                    <a href="{{ path('admin_user') }}" title="utilisateurs"><li><i class="fas fa-users"></i></li></a>
                   {% endif %}
+                    <a href="{{ path('admin_competences') }}" title="competences"><li><i class="fas fa-desktop"></i></li></a>
+                    <a href="{{ path('admin_apropos') }}" title="a propos"><li><i class="fas fa-comment"></i></li></a>
                   
-                    {# <a href="{{ path('app_logout') }}" title="déconnexion"><li><i class="fas fa-user-times"></i></li></a> #}
+                    <a href="{{ path('app_logout') }}" title="déconnexion"><li><i class="fas fa-user-times"></i></li></a>
                     <a href="{{ path('home') }}" title="accueil du site"><li><i class="fas fa-door-open"></i></li></a>
                 </ul>
               </nav>
